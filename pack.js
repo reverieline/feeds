@@ -1,6 +1,16 @@
 const fs = require("fs");
+const path = require('path');
 
-const fetcher = require("./fetchers/elementy.js");
+const fetchers_dir = './fetchers/';
 
-const json = JSON.stringify(fetcher, (k,v) => typeof v === "function" ? "(" + v + ")()" : v);
-fs.writeFileSync("./feeds.json",json);
+const fetchers = fs.readdirSync(fetchers_dir);
+let out=[];
+for(const f of fetchers){
+    if(path.extname(f)==='.js'){
+        const fetcher = require(fetchers_dir+f);
+        out.push(fetcher);
+    }
+}
+
+const json = JSON.stringify(out, (k,v) => typeof v === "function" ? "(" + v + ")()" : v);
+    fs.writeFileSync("./feeds.json",json);       

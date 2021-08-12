@@ -1,6 +1,6 @@
 const jsdom = require("jsdom");
 
-const fetcher = require("./fetchers/elementy.js");
+const fetcher = require("./fetchers/alpha.js");
 
 const vc = new jsdom.VirtualConsole();
 jsdom.JSDOM.fromURL(fetcher.list_url,{

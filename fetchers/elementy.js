@@ -1,4 +1,5 @@
 module.exports = {
+  title: "Elementy",
   list_url: "https://elementy.ru/novosti_nauki/",
   list_func: () => {
     let out = [];
