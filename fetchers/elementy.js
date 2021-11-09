@@ -18,5 +18,15 @@ module.exports = {
     }
     
     return out;
-  },
+  },//list_func
+  text_func: () => {
+    let text="";
+    
+    try{
+      let b=document.querySelector('.body');
+      text+=b.textContent.trim();
+    }catch(e){console.error(e)};
+    
+    return text;
+  },//text_func
 }

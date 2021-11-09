@@ -24,5 +24,16 @@ module.exports = {
     }
     
     return out;
-  },
+  },//list_func
+  text_func: () => {
+    let text="";
+    
+    try{
+      let a=document.querySelector('article');
+      text+=a.querySelector('#post-title').textContent.trim();
+      text+=a.querySelector('#article-text').textContent.trim();
+    }catch(e){console.error(e)};
+    
+    return text;
+  },//text_func
 }

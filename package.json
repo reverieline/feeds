@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/reverieline/feeds#readme",
   "dependencies": {
+    "canvas": "^2.8.0",
     "jsdom": "^16.7.0",
     "request": "^2.88.2"
   }
